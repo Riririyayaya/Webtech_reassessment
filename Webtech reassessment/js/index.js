@@ -4,17 +4,19 @@ document.getElementById('myBtn').addEventListener('click', getData);
 function getData() {
     // console.log('test');
 
-    //Get API
+    //Get API to get 20 results everytime you refresh
     fetch('https://randomuser.me/api/?results=20')
+    
+    //transforming data into json
         .then(res => res.json())
         .then(data => {
 
             let user = data.results;           
 
-            //Getting Data Value
+       //Getting Data Value
             let output = "<h2><center></center></h2>";
 
-            //Data loop for each user profile
+       //Data loop for each user profile
             user.forEach(function (lists) {
                 output += `
                 <div class="container">
